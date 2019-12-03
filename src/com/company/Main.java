@@ -1,15 +1,13 @@
 package com.company;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
 public class Main {
-
     public static void main(String[] args) {
 
         List<Person> personList = new ArrayList<>();
-        personList = addToList();
+        personList = addPersonToList();
 
         //Sorted Person List by AGE...Using Lambda expression
 
@@ -26,26 +24,16 @@ public class Main {
 
         //the list of Persons that live in zone less than 5 in Tehran...
 
-        System.out.println("the list of Persons that live in zone less than 5 in Tehran...");
+        System.out.println("the list of Persons that live in zone less than 5 in Tehran...\n");
         Stream<Person> persons = personList.stream();   //creating the stream of all Persons
         Stream<Person> cityFilter = persons.filter(p->p.getAddress().getCity().equals("Tehran"));
         Stream<Person> zoneFilter = cityFilter.filter(p->p.getAddress().getZone()<5);
         zoneFilter.forEach(p-> System.out.println(p.getLastName()));
-
-
-
-
-
-
-
     }
 
 
 
-
-
-
-    public static List<Person> addToList (){
+    public static List<Person> addPersonToList (){
 
         List<Person> list = new ArrayList<>();
 
