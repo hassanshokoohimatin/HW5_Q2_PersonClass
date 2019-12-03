@@ -12,4 +12,30 @@ public class Person {
         this.age = age;
         this.address = address;
     }
+
+    public String getFirstNmae() {
+        return firstNmae;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstNmae='" + firstNmae + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", address=" + address +
+                '}';
+    }
 }

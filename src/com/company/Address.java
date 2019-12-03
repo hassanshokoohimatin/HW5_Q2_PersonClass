@@ -14,4 +14,35 @@ public class Address {
         this.street = street;
         this.alley = alley;
     }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public String getAlley() {
+        return alley;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "postalCode='" + postalCode + '\'' +
+                ", city='" + city + '\'' +
+                ", zone='" + zone + '\'' +
+                ", street='" + street + '\'' +
+                ", alley='" + alley + '\'' +
+                '}';
+    }
 }

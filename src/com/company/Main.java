@@ -10,7 +10,6 @@ public class Main {
         List<Person> personList = new ArrayList<>();
         personList = addToList();
 
-
     }
 
 
