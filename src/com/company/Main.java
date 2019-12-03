@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Main {
 
@@ -23,6 +24,15 @@ public class Main {
         personList.forEach(p-> System.out.println(p.getLastName()));
         System.out.println("============================================================================================");
 
+        //the list of Persons that live in zone less than 5 in Tehran...
+
+        System.out.println("the list of Persons that live in zone less than 5 in Tehran...");
+        Stream<Person> persons = personList.stream();   //creating the stream of all Persons
+        Stream<Person> cityFilter = persons.filter(p->p.getAddress().getCity().equals("Tehran"));
+        Stream<Person> zoneFilter = cityFilter.filter(p->p.getAddress().getZone()<5);
+        zoneFilter.forEach(p-> System.out.println(p.getLastName()));
+
+
 
 
 
@@ -39,11 +49,11 @@ public class Main {
 
         List<Person> list = new ArrayList<>();
 
-        Address address1 = new Address("11111","Tehran","4","Hengam","Sharifi");
-        Address address2 = new Address("22222","Tehran","8","Madani","Samangan");
-        Address address3 = new Address("33333","Tehran","1","Bahonar","Saba");
-        Address address4 = new Address("44444","Tehran","2","Valiasr","Ziba");
-        Address address5 = new Address("55555","Tehran","10","Navvab","Aghaghia");
+        Address address1 = new Address("11111","Tehran",4,"Hengam","Sharifi");
+        Address address2 = new Address("22222","Karaj",1,"Rajaei","Samangan");
+        Address address3 = new Address("33333","Karaj",2,"Koohrang","Saba");
+        Address address4 = new Address("44444","Tehran",2,"Valiasr","Ziba");
+        Address address5 = new Address("55555","Tehran",10,"Navvab","Aghaghia");
 
         Person person1 = new Person("Hassan","ShokoohiMatin",32,address1);
         Person person2 = new Person("Mahdi","Rad",36,address2);
