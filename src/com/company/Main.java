@@ -10,7 +10,17 @@ public class Main {
         List<Person> personList = new ArrayList<>();
         personList = addToList();
 
+        //Sorted Person List by AGE...Using Lambda expression
+
+        personList.sort((p1,p2)->p1.getAge()-p2.getAge());
+        personList.forEach(p-> System.out.println(p));
+
+
+
+
     }
+
+
 
 
 
